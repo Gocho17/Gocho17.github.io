@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuéntanos Más - Trafalgar Pizza Club</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+         <a href="#" class="logo">
+            TRYFALGAR
+            <span class="logo-subtitle">COCKTAIL & PIZZY CLUB</span>
+        </a>
+    </header>
+
+    <div class="container">
+        <h1>Ayúdanos a mejorar</h1>
+        <p id="feedbackIntro">Lamentamos que tu experiencia no haya sido perfecta. Tus comentarios son cruciales para nosotros.</p>
+        
+        <form id="feedbackForm">
+            <div class="form-group">
+                <label for="name">Tu Nombre:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Tu Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="whatsapp">Tu WhatsApp (Opcional):</label>
+                <input type="tel" id="whatsapp" name="whatsapp" placeholder="Ej: +34 600112233">
+            </div>
+
+            <div class="form-group">
+                <label for="experience">Cuéntanos sobre tu experiencia y cómo podemos mejorar:</label>
+                <textarea id="experience" name="experience" rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="btn">Enviar Comentarios</button>
+        </form>
+    </div>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 Trafalgar Pizza Club. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Script simple para el formulario de comentarios (opcional, para mostrar el rating)
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const rating = params.get('rating');
+            const feedbackIntro = document.getElementById('feedbackIntro');
+
+            if (rating && feedbackIntro) {
+                feedbackIntro.innerHTML = `Recibimos tu calificación de <strong>${rating} estrella${rating > 1 ? 's' : ''}</strong>.
+                <br>Lamentamos que tu experiencia no haya sido perfecta. Tus comentarios son cruciales para ayudarnos a mejorar.`;
+            }
+
+            const form = document.getElementById('feedbackForm');
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                // Aquí iría la lógica para enviar los datos del formulario a un servidor
+                // Por ahora, solo mostramos un mensaje y limpiamos el formulario
+                const name = document.getElementById('name').value;
+                alert(`Gracias, ${name}. Hemos recibido tus comentarios y los tendremos muy en cuenta.`);
+                form.reset();
+                // Opcionalmente, redirigir a una página de "gracias por tu feedback"
+                // window.location.href = 'gracias-feedback.html'; 
+            });
+        });
+    </script>
+</body>
+</html>

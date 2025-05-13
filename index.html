@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Gracias por tu visita! - Trafalgar Pizza Club</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <a href="#" class="logo">
+            TRYFALGAR
+            <span class="logo-subtitle">COCKTAIL & PIZZY CLUB</span>
+        </a>
+    </header>
+
+    <div class="container">
+        <h1>¡Gracias por visitarnos en Trafalgar Pizza Club!</h1>
+        <p>Tu opinión es muy importante para nosotros y nos ayuda a mejorar.</p>
+        <p><strong>Por favor, califica tu experiencia:</strong></p>
+
+        <div class="star-rating" id="starRating">
+            <span class="star" data-value="1">&#9733;</span> <!-- ★ -->
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+        </div>
+
+        <p id="ratingMessage" style="min-height: 20px; font-weight: bold;"></p>
+
+        <!-- El botón se mostrará con JS una vez se seleccione una calificación -->
+        <button id="submitRatingBtn" class="btn" style="display:none;">Continuar</button>
+
+    </div>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 Trafalgar Pizza Club. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
